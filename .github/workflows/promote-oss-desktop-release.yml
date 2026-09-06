@@ -1,3 +1,4 @@
+# Self-hosted only; unserved until runners are deliberately assigned.
 name: Promote OSS Desktop Auto-Update
 run-name: Promote desktop-v${{ inputs.version }} to auto-update
 
@@ -19,7 +20,7 @@ permissions:
 jobs:
   promote:
     if: github.repository == 'block/buzz'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64]
     timeout-minutes: 10
     permissions:
       contents: write

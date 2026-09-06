@@ -1,3 +1,4 @@
+# Self-hosted only; unserved until runners are deliberately assigned.
 name: Mesh Lifecycle
 # Relay-driven mesh lifecycle smoke: membership → signed discovery notes →
 # relay-derived allowlist → join → CPU inference over QUIC → stranger denied
@@ -46,7 +47,7 @@ env:
 jobs:
   lifecycle-smoke:
     name: Relay-Driven Mesh Lifecycle Smoke
-    runs-on: ubuntu-24.04
+    runs-on: [self-hosted, Linux, X64]
     timeout-minutes: 45
     permissions:
       contents: read

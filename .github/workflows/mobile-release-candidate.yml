@@ -1,3 +1,4 @@
+# Self-hosted only; unserved until runners are deliberately assigned.
 name: Publish Mobile Release Candidate
 run-name: Publish mobile-v${{ inputs.version }}-rc.${{ inputs.candidate_number }}
 
@@ -26,7 +27,7 @@ permissions:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64]
     timeout-minutes: 5
     steps:
       - name: Require the reviewed workflow from main

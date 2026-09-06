@@ -1,3 +1,4 @@
+# Self-hosted only; unserved until runners are deliberately assigned.
 name: Windows Canary
 
 # Produces an unsigned Windows NSIS installer from main without creating
@@ -17,7 +18,7 @@ jobs:
   build:
     name: Build Windows canary
     if: github.repository == 'block/buzz'
-    runs-on: windows-latest
+    runs-on: [self-hosted, Windows, X64]
     timeout-minutes: 60
     permissions:
       contents: read
